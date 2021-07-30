@@ -1,0 +1,925 @@
+@import 'partials/_variables.scss';
+@import 'partials/_mixins.scss';
+@import 'partials/_fonts.scss';
+@import 'partials/_animations.scss';
+@import 'partials/_reset.scss';
+
+body {
+    background: $black;
+    background-image: url(../img/matrix-transparent.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    color: $white;
+    font-family: $font-primary;
+    font-weight: 500;
+    line-height: 1.618;
+
+    //HTML Elements
+    h1,
+    h2,
+    h3,
+    p,
+    ul,
+    ol,
+    address {
+        line-height: normal;
+        margin: 0 0 1.618rem;
+
+        strong {
+            background: $dark;
+            color: $white;
+            padding: 0 5px;
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $font-secondary;
+        line-height: 1.5;
+        margin: 0 0 1em;
+    }
+
+    h1 {
+        font-size: 4rem;
+        margin: 0;
+
+        @include breakpoint(md) {
+            font-size: 3rem;
+        }
+
+        @include breakpoint(sm) {
+            font-size: 2rem;
+        }
+    }
+
+    h2 {
+        font-size: 2.5rem;
+
+        @include breakpoint(md) {
+            font-size: 1.75rem;
+        }
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 1.25em;
+        line-height: 1.5;
+    }
+
+    a,
+    a:visited {
+        color: $dark;
+        transition: ease all 0.25s;
+
+        &:hover {
+            animation: glitch .5s infinite;
+            background: $dark;
+            color: $white;
+        }
+
+        &:focus,
+        &:active {
+            outline: 2px solid $white;
+        }
+    }
+
+    ul,
+    ol {
+        font-size: 1.25rem;
+        padding: 0 0 0 30px;
+
+        li {
+            margin: 0 0 10px;
+
+            ul,
+            ol {
+                padding: 15px 0 0 30px;
+            }
+        }
+
+        &.split {
+            column-count: 3;
+            margin: 0;
+
+            &:last-of-type {
+                margin: 0;
+            }
+
+            @include breakpoint(xl) {
+                column-count: 2;
+            }
+
+            @include breakpoint(md) {
+                column-count: 1;
+                margin: 0 0 1.618em;
+                text-align: left;
+            }
+        }
+
+        @include breakpoint(md) {
+            font-size: 1.25rem;
+        }
+    }
+
+    br {
+        @include breakpoint(md) {
+            display: none;
+        }
+    }
+
+    hr {
+        margin: 2.5rem 0;
+    }
+
+    blockquote {
+        font-size: 1.75rem;
+        margin: calc(1.618em * 2) auto;
+        max-width: 960px;
+        line-height: normal;
+        text-align: center;
+
+        cite {
+            display: block;
+            clear: both;
+            font-size: 1rem;
+            font-style: normal;
+            margin: 1rem 0 0;
+        }
+    }
+
+    form {
+        font-family: $font-primary !important;
+
+        label {
+            display: block;
+            margin: 0 0 15px;
+        }
+
+        input,
+        select,
+        textarea {
+            background: $black;
+            border: 2px solid $white !important;
+            color: $white !important;
+            padding: 15px !important;
+
+            &::placeholder {
+                color: $white;
+                font-family: $font-primary;
+                opacity: 1;
+            }
+        }
+    }
+
+    section {
+        padding: 100px 0;
+        position: relative;
+        width: 100%;
+
+        &.flex {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        @include breakpoint(xl) {
+            width: 100%;
+        }
+
+        @include breakpoint(md) {
+            min-height: 0;
+            padding: 50px 0;
+        }
+    }
+
+    article {
+
+        h1 {
+            font-size: 3rem;
+            margin: 0 0 10px;
+
+            @include breakpoint(md) {
+                font-size: 2rem;
+            }
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0 0 .75em;
+            padding: 1em 0 0;
+        }
+
+        #hero {
+            padding: 200px 0 0;
+        }
+    }
+
+    //Utility classes
+    .container {
+        margin: 0 auto;
+        max-width: 1180px;
+        padding: 0 15px;
+        width: 100%;
+    }
+
+    .flex-row {
+        display: flex;
+    }
+
+    .half {
+        width: 50%;
+    }
+
+    .text-left {
+        text-align: left;
+    }
+
+    .text-right {
+        text-align: right;
+
+        @include breakpoint(xl) {
+            text-align: left;
+        }
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .aligncenter,
+    .alignleft,
+    .alignright {
+        display: block;
+        padding: 0;
+    }
+
+    .aligncenter {
+        float: none;
+        margin: 2em auto 2em;
+    }
+
+    .alignright {
+        float: right;
+        margin: 2em 0 2em 2em;
+    }
+
+    .alignleft {
+        float: left;
+        margin: 2em 3em 2em 0;
+    }
+
+    .no-margin {
+        margin: 0 !important;
+    }
+
+    //WP Overrides
+    .widget {
+        margin: 0 0 50px;
+    }
+
+    .widgettitle {
+        font-size: 1.5rem;
+    }
+
+    .widget_recent_entries {
+        padding: 50px 0 0;
+    }
+
+    .nav-links {
+        margin: 50px 0 0;
+        width: 100%;
+    }
+
+    .meta {
+        font-family: $font-secondary;
+        font-size: 1.25rem;
+
+        @include breakpoint(md) {
+            font-size: 1rem;
+        }
+    }
+
+    .wp-post-image {
+        margin: 0 0 50px;
+    }
+
+    .comments-area h3 {
+        margin: 0 0 15px;
+    }
+
+    .comment-list {
+        list-style: none;
+        margin: 50px 0 100px;
+        padding: 0;
+
+        .comment-body {
+            margin: 0 0 50px;
+        }
+
+        p:last-of-type {
+            margin: 0;
+        }
+    }
+
+    .comment-form .logged-in-as {
+        display: none;
+    }
+
+    #cancel-comment-reply-link {
+        display: block;
+        font-size: 1rem;
+        margin: 10px 0 30px;
+        max-width: 195px;
+    }
+
+    .search-form {
+        display: flex;
+        margin: 0 0 50px;
+
+        label {
+            flex-grow: 2;
+            margin: 0;
+        }
+
+        input[type="search"] {
+            width: 100%;
+        }
+    }
+
+    .post-categories {
+        @include cleanUl;
+        display: inline-block;
+
+        li {
+            display: inline-block;
+        }
+    }
+
+    //Modules
+    .logo {
+        font-family: $font-secondary;
+        font-size: 2rem;
+    }
+
+    #mobile-toggler {
+        display: none;
+        padding: 1.618em;
+        outline: none;
+
+        /*!
+* Hamburgers
+* @description Tasty CSS-animated hamburgers
+* @author Jonathan Suh @jonsuh
+* @site https://jonsuh.com/hamburgers
+* @link https://github.com/jonsuh/hamburgers
+*/
+        &.hamburger {
+            padding: 30px 15px 25px;
+            cursor: pointer;
+            transition-property: opacity, filter;
+            transition-duration: 0.15s;
+            transition-timing-function: linear;
+            font: inherit;
+            color: inherit;
+            text-transform: none;
+            background-color: transparent;
+            border: 0;
+            margin: 0;
+            overflow: visible;
+
+            &:hover {
+                opacity: 0.7;
+            }
+
+            .is-active:hover {
+                opacity: 0.7;
+            }
+
+            .is-active .hamburger-inner,
+            .is-active .hamburger-inner::before,
+            .is-active .hamburger-inner::after {
+                background-color: $white;
+            }
+
+            .is-active .hamburger-inner,
+            .is-active .hamburger-inner::before,
+            .is-active .hamburger-inner::after {
+                background-color: $white;
+            }
+
+            .hamburger-box {
+                width: 40px;
+                height: 24px;
+                display: inline-block;
+                position: relative;
+            }
+
+            .hamburger-inner {
+                display: block;
+                top: 50%;
+                margin-top: -2px;
+            }
+
+            .hamburger-inner,
+            .hamburger-inner::before,
+            .hamburger-inner::after {
+                width: 40px;
+                height: 4px;
+                background-color: $white;
+                border-radius: 4px;
+                position: absolute;
+                transition-property: transform;
+                transition-duration: 0.15s;
+                transition-timing-function: ease;
+            }
+
+            .hamburger-inner::before,
+            .hamburger-inner::after {
+                content: '';
+                display: block;
+            }
+
+            .hamburger-inner::before {
+                top: -10px;
+            }
+
+            .hamburger-inner::after {
+                bottom: -10px;
+            }
+
+            /*
+   * Squeeze
+   */
+            &.hamburger--squeeze .hamburger-inner {
+                transition-duration: 0.075s;
+                transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            }
+
+            &.hamburger--squeeze .hamburger-inner::before {
+                transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+            }
+
+            &.hamburger--squeeze .hamburger-inner::after {
+                transition: bottom 0.075s 0.12s ease,
+                    transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            }
+
+            &.hamburger--squeeze.is-active .hamburger-inner {
+                transform: rotate(45deg);
+                transition-delay: 0.12s;
+                transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+
+            &.hamburger--squeeze.is-active .hamburger-inner::before {
+                top: 0;
+                opacity: 0;
+                transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+            }
+
+            &.hamburger--squeeze.is-active .hamburger-inner::after {
+                bottom: 0;
+                transform: rotate(-90deg);
+                transition: bottom 0.075s ease,
+                    transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+
+            @include breakpoint(md) {
+                padding: 20px 0 15px 15px !important;
+            }
+        }
+
+        &:hover {
+            background: transparent !important;
+            box-shadow: none;
+        }
+
+        @include breakpoint(xl) {
+            display: block;
+        }
+    }
+
+    nav {
+        align-items: center;
+        display: flex;
+
+        ul {
+            display: flex;
+            font-size: 1rem;
+            list-style-type: none;
+            margin: 0 1.168rem 0 0;
+            padding: 0;
+            transition: all .5s ease-in-out;
+
+            >li {
+                margin: 0;
+
+                a {
+                    display: block;
+                    font-size: 1.5rem;
+                    padding: 1.618rem calc(1.618rem / 2);
+                    position: relative;
+
+                    &:after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        height: 0%;
+                        left: 0;
+                        top: 0;
+                        background: $black;
+                        opacity: 0;
+                        width: 100%;
+                        transition: all .35s ease-in-out;
+                        z-index: -1;
+
+                        @include breakpoint(xl) {
+                            display: none !important;
+                        }
+                    }
+
+                    &:hover {
+                        animation: glitch .5s infinite;
+                        background: transparent;
+                        color: $white;
+
+                        &:after {
+                            opacity: 1;
+                            height: 100%;
+                        }
+                    }
+
+                    @include breakpoint(xl) {
+                        padding: 0;
+
+                        &:after {
+                            visibility: hidden !important;
+                        }
+                    }
+
+                    @include breakpoint(xl) {
+                        font-size: 1.5rem;
+                        padding: 1.618rem 1.618rem 0 1em;
+
+                        &:hover {
+                            background: transparent;
+
+                            &:after {
+                                visibility: visible !important;
+                                animation: linkHover 0.5s forwards 0s ease-in-out;
+                            }
+                        }
+                    }
+                }
+
+                @include breakpoint(xl) {
+                    display: inline-block;
+                    margin: 0 1.618em 0 0;
+                }
+
+                @include breakpoint(lg) {
+                    display: block;
+                    margin: 0;
+                }
+            }
+
+            &.social {
+
+                li {
+                    @include breakpoint(xl) {
+                        margin: 0;
+                    }
+                }
+
+                @include breakpoint(xl) {
+                    flex-direction: row;
+                }
+            }
+
+            @include breakpoint(xl) {
+                flex-direction: column;
+            }
+        }
+
+        @include breakpoint(xl) {
+            align-items: flex-start;
+            background: $black;
+            flex-direction: column;
+            opacity: 0;
+            height: 100%;
+            padding: 50px 0 0;
+            pointer-events: none;
+            position: fixed;
+            left: 0;
+            top: 75px;
+            width: 100%;
+        }
+
+        @include breakpoint(md) {
+            top: 60px;
+        }
+    }
+
+    .btn,
+    button,
+    input[type="submit"] {
+        background: $dark;
+        border: none;
+        border-radius: 0;
+        color: $white;
+        cursor: pointer;
+        font-family: $font-secondary;
+        font-size: 1rem;
+        padding: 15px 30px !important;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+            animation: glitch .5s infinite;
+            background: lighten($dark, 15%) !important;
+            box-shadow: 0 0 10px 5px $dark;
+        }
+
+        &:visited,
+        &:active {
+            color: $white;
+        }
+    }
+
+    .btn-row {
+        margin: 50px 0 0;
+
+        .btn {
+            display: inline-block;
+            margin: 0 15px 0 0;
+
+            @include breakpoint(md) {
+                display: block;
+                margin: 0 0 15px;
+            }
+        }
+    }
+
+    input[type="submit"] {
+        border: none !important;
+    }
+
+    .page {
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0 0 .75em;
+            padding: 1em 0 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+    }
+
+    .tags {
+        margin: 50px 0 0;
+
+        &.alt-margin {
+            margin: 0 0 50px;
+        }
+    }
+
+    .portfolio {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+
+        &__card {
+            margin: 0 0 45px;
+            position: relative;
+            width: 100%;
+
+            a {
+                text-decoration: none;
+            }
+
+            figure {
+                height: 250px;
+                margin: 0;
+                width: 100%;
+
+                img {
+                    height: 100%;
+                    margin: 0;
+                    object-fit: cover;
+                    object-position: center;
+                    width: 100%;
+                }
+
+                &.left-align img {
+                    object-position: left;
+                }
+            }
+
+            cite {
+                font-size: 1.25rem;
+                font-style: normal;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+
+        @include breakpoint(lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include breakpoint(md) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        @include breakpoint(sm) {
+            gap: 15px;
+            padding: 0 15px;
+        }
+    }
+
+    .blog-list {
+        @include cleanUl;
+
+        &__preview {
+            margin: 0 0 3em;
+        }
+
+        &__link {
+            text-decoration: none;
+        }
+    }
+
+    .glitch {
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+
+        text-shadow:
+            .05em 0 0 rgba(255, 0, 0, .75),
+            -.025em -.05em 0 rgba(0, 255, 0, .75),
+            .025em .05em 0 rgba(0, 0, 255, .75);
+
+        animation: glitch .5s infinite;
+    }
+
+    #skip-link {
+        position: absolute;
+        left: -999px;
+        width: 1px;
+        height: 1px;
+        top: auto;
+
+        &:focus {
+            color: transparent;
+            display: inline-block;
+            height: auto;
+            width: auto;
+            position: static;
+            margin: auto;
+        }
+    }
+
+    #home-hero {
+        height: 100vh;
+
+        h1 {
+            font-size: 5rem;
+
+            @include breakpoint(md) {
+                font-size: 3rem;
+            }
+
+            @include breakpoint(sm) {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    #hero {
+        padding: 200px 0 100px;
+    }
+
+    //Landmarks
+    header {
+        align-items: center;
+        background: transparent;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        padding: 0 1.618rem;
+        position: fixed;
+        transition: all .5s ease;
+        width: 100%;
+        z-index: 1000;
+
+        a,
+        a:visited {
+            color: $white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        &.open {
+
+            nav {
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+
+        &.scrolled {
+            background: $black;
+            color: $white;
+        }
+
+        @include breakpoint(xl) {
+            align-items: center;
+            background: $black;
+            display: flex;
+            justify-content: space-between;
+            height: auto;
+            position: fixed;
+            width: 100%;
+        }
+    }
+
+    main {
+
+        @include breakpoint(xl) {
+            padding: 85px 0 0;
+        }
+
+        @include breakpoint(lg) {
+            padding: 0;
+        }
+    }
+
+    footer {
+
+        .donate {
+            text-align: center;
+
+            ul {
+                @include cleanUl;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 0 auto;
+
+                li {
+                    max-width: 250px;
+                    padding: 0 30px;
+                }
+            }
+
+            i {
+                font-size: 3rem;
+                margin: 1rem;
+            }
+
+            code {
+                color: $dark;
+                font-size: .75rem;
+                overflow-wrap: break-word;
+            }
+        }
+
+        .bottom {
+            font-size: 0.85em;
+            margin: 0;
+            padding: 1.618em 3.36rem;
+            text-align: center;
+        }
+    }
+}
