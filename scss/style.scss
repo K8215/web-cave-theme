@@ -731,6 +731,7 @@ body {
             figure {
                 height: 250px;
                 margin: 0;
+                transition: all .25s ease;
                 width: 100%;
 
                 img {
@@ -751,6 +752,10 @@ body {
                 font-style: normal;
                 font-weight: bold;
                 text-transform: uppercase;
+            }
+
+            &:hover figure {
+                box-shadow: 0 0 5px 0 $dark;
             }
         }
 
