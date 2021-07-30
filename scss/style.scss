@@ -714,6 +714,24 @@ body {
         }
     }
 
+    .single-thumbnail {
+        height: 400px;
+        margin: 0 0 30px;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+            margin: 0;
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+        }
+
+        @include breakpoint(md) {
+            height: 250px;
+        }
+    }
+
     .portfolio {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
