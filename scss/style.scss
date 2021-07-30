@@ -715,7 +715,8 @@ body {
     }
 
     .single-thumbnail {
-        height: 400px;
+        box-shadow: 0 0 5px 0 $dark;
+        height: 500px;
         margin: 0 0 30px;
         overflow: hidden;
 
