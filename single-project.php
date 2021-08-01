@@ -25,6 +25,28 @@ get_header();
             <div class="container">
                 <?php get_template_part('inc/single/single-content');?>
 
+                <div class="btn-row">
+                    <?php 
+                $link = get_field('glitch_link');
+                if( $link ): 
+                $link_url = $link['url'];
+                $link_title = $link['title'];
+                ?>
+                    <a class="btn" href="<?php echo esc_url( $link_url ); ?>"
+                        target="_blank"><?php echo esc_html( $link_title ); ?></a>
+                    <?php endif; ?>
+
+                    <?php 
+                $link = get_field('github_link');
+                if( $link ): 
+                $link_url = $link['url'];
+                $link_title = $link['title'];
+                ?>
+                    <a class="btn" href="<?php echo esc_url( $link_url ); ?>"
+                        target="_blank"><?php echo esc_html( $link_title ); ?></a>
+                    <?php endif; ?>
+                </div>
+
                 <?php get_template_part('inc/single/single-footer');?>
             </div>
         </section>

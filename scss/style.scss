@@ -4,6 +4,10 @@
 @import 'partials/_animations.scss';
 @import 'partials/_reset.scss';
 
+html {
+    font-size: 16px;
+}
+
 body {
     background: $black;
     background-image: url(../img/matrix-transparent.png);
@@ -83,6 +87,10 @@ body {
     p {
         font-size: 1.25em;
         line-height: 1.5;
+
+        @include breakpoint(md) {
+            font-size: 1rem;
+        }
     }
 
     a,
@@ -224,6 +232,10 @@ body {
 
         h2 {
             font-size: 2rem;
+
+            @include breakpoint(md) {
+                font-size: 1.5rem;
+            }
         }
 
         h2,
@@ -237,6 +249,10 @@ body {
 
         #hero {
             padding: 200px 0 0;
+
+            @include breakpoint(xl) {
+                padding: 100px 0 0;
+            }
         }
     }
 
@@ -322,6 +338,10 @@ body {
 
         @include breakpoint(md) {
             font-size: 1rem;
+        }
+
+        @include breakpoint(sm) {
+            font-size: .85rem;
         }
     }
 
@@ -509,7 +529,7 @@ body {
                     transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
             }
 
-            @include breakpoint(md) {
+            @include breakpoint(xl) {
                 padding: 20px 0 15px 15px !important;
             }
         }
@@ -717,7 +737,7 @@ body {
     .single-thumbnail {
         box-shadow: 0 0 5px 0 $dark;
         height: 500px;
-        margin: 0 0 30px;
+        margin: 0 0 50px;
         overflow: hidden;
 
         img {
@@ -901,11 +921,7 @@ body {
     main {
 
         @include breakpoint(xl) {
-            padding: 85px 0 0;
-        }
-
-        @include breakpoint(lg) {
-            padding: 0;
+            padding: 65px 0 0;
         }
     }
 
