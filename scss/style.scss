@@ -199,7 +199,7 @@ body {
     }
 
     section {
-        padding: 100px 0;
+        padding: 50px 0;
         position: relative;
         width: 100%;
 
@@ -248,7 +248,7 @@ body {
         }
 
         #hero {
-            padding: 200px 0 0;
+            padding: 200px 0 50px;
 
             @include breakpoint(xl) {
                 padding: 100px 0 0;
@@ -332,7 +332,8 @@ body {
         width: 100%;
     }
 
-    .meta {
+    .meta,
+    .meta a {
         font-family: $font-secondary;
         font-size: 1.25rem;
 
@@ -868,10 +869,18 @@ body {
                 font-size: 2rem;
             }
         }
+
+        @include breakpoint(md) {
+            height: 70vh;
+        }
     }
 
     #hero {
         padding: 200px 0 100px;
+
+        @include breakpoint(md) {
+            padding: 100px 0 50px;
+        }
     }
 
     //Landmarks
