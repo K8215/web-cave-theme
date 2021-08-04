@@ -3,10 +3,8 @@
 	$postid = $post->ID;
     if(is_front_page()) {
         $postsPer = 6;
-        $title = 'Latest';
     } else {
         $postsPer = 3;
-        $title = 'Related';
     }
 
 	$args = array(
@@ -21,7 +19,7 @@
 <section>
     <div class="container">
         <h2 class="glitch">
-            <?php echo $title;?> Projects
+            Latest Projects
         </h2>
         <hr>
         <div class="portfolio">
