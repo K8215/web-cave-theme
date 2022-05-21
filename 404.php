@@ -13,7 +13,7 @@ get_header();
 <main id="main">
     <section id="hero" class="flex text-center">
         <div class="container">
-            <h1 class="glitch">
+            <h1>
                 <?php esc_html_e( '404: Not Found', 'web-cave' ); ?>
             </h1>
         </div>

@@ -19,7 +19,7 @@ get_header();
 
     <section id="hero" class="flex">
         <div class="container">
-            <h1 class="glitch">Blog</h1>
+            <h1>Blog</h1>
         </div>
     </section>
 

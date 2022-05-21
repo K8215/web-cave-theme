@@ -24,7 +24,7 @@
     if ( $post_query -> have_posts() ) : ?>
 <section>
     <div class="container">
-        <h2 class="glitch">
+        <h2>
             <?php echo $title;?> Blogs
         </h2>
         <hr>
@@ -35,8 +35,7 @@
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <h3><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
                     <p><?php the_excerpt();?></p>
-                    <a href="<?php the_permalink();?>" class="blog-list__link"
-                        aria-label="Continue reading <?php the_title(); ?>">Continue Reading <i
+                    <a href="<?php the_permalink();?>" class="blog-list__link">Read More <i
                             class="fas fa-angle-double-right"></i></a>
                 </article>
             </li>

@@ -3,8 +3,10 @@
 	$postid = $post->ID;
     if(is_front_page()) {
         $postsPer = 6;
+        $title = 'Latest';
     } else {
         $postsPer = 3;
+        $title = 'Related';
     }
 
 	$args = array(
@@ -18,8 +20,8 @@
     if ( $project_query -> have_posts() ) : ?>
 <section>
     <div class="container">
-        <h2 class="glitch">
-            Latest Projects
+        <h2>
+            <?php echo $title;?> Projects
         </h2>
         <hr>
         <div class="portfolio">

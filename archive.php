@@ -14,7 +14,7 @@ get_header();
 
     <section id="hero" class="flex">
         <div class="container">
-            <h1 class="glitch"><?php the_archive_title();?></h1>
+            <h1><?php the_archive_title();?></h1>
         </div>
     </section>
 

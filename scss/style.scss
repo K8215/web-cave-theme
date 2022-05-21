@@ -5,12 +5,13 @@
 @import 'partials/_reset.scss';
 
 html {
-    font-size: 16px;
+    font-size: 18px;
+    scroll-behavior: smooth;
 }
 
 body {
     background: $black;
-    background-image: url(../img/matrix-transparent.png);
+    background-image: url(../img/matrix-transparent-v2.png);
     background-size: 100%;
     background-repeat: no-repeat;
     color: $white;
@@ -42,9 +43,8 @@ body {
     h4,
     h5,
     h6 {
-        font-family: $font-secondary;
         line-height: 1.5;
-        margin: 0 0 1em;
+        margin: 0 0 1rem;
     }
 
     h1 {
@@ -61,7 +61,7 @@ body {
     }
 
     h2 {
-        font-size: 2.5rem;
+        font-size: 2.75rem;
 
         @include breakpoint(md) {
             font-size: 1.75rem;
@@ -85,7 +85,7 @@ body {
     }
 
     p {
-        font-size: 1.25em;
+        font-size: 1rem;
         line-height: 1.5;
 
         @include breakpoint(md) {
@@ -112,7 +112,7 @@ body {
 
     ul,
     ol {
-        font-size: 1.25rem;
+        font-size: 1rem;
         padding: 0 0 0 30px;
 
         li {
@@ -144,7 +144,7 @@ body {
         }
 
         @include breakpoint(md) {
-            font-size: 1.25rem;
+            font-size: 1rem;
         }
     }
 
@@ -155,7 +155,13 @@ body {
     }
 
     hr {
-        margin: 2.5rem 0;
+        margin: 1rem 0;
+    }
+
+    pre {
+        background-color: #111;
+        color: $dark;
+        margin: 50px 0;
     }
 
     blockquote {
@@ -222,8 +228,9 @@ body {
     article {
 
         h1 {
-            font-size: 3rem;
-            margin: 0 0 10px;
+            font-size: 4rem;
+            line-height: 1;
+            margin: 0 0 25px;
 
             @include breakpoint(md) {
                 font-size: 2rem;
@@ -334,8 +341,7 @@ body {
 
     .meta,
     .meta a {
-        font-family: $font-secondary;
-        font-size: 1.25rem;
+        font-size: 1rem;
 
         @include breakpoint(md) {
             font-size: 1rem;
@@ -381,7 +387,7 @@ body {
 
     .search-form {
         display: flex;
-        margin: 0 0 50px;
+        margin: 0 0 15px;
 
         label {
             flex-grow: 2;
@@ -404,7 +410,7 @@ body {
 
     //Modules
     .logo {
-        font-family: $font-secondary;
+        //font-family: $font-secondary;
         font-size: 2rem;
     }
 
@@ -562,7 +568,7 @@ body {
 
                 a {
                     display: block;
-                    font-size: 1.5rem;
+                    font-size: 1.25rem;
                     padding: 1.618rem calc(1.618rem / 2);
                     position: relative;
 
@@ -573,7 +579,7 @@ body {
                         height: 0%;
                         left: 0;
                         top: 0;
-                        background: $black;
+                        background: $dark;
                         opacity: 0;
                         width: 100%;
                         transition: all .35s ease-in-out;
@@ -674,7 +680,7 @@ body {
         border-radius: 0;
         color: $white;
         cursor: pointer;
-        font-family: $font-secondary;
+        //font-family: $font-secondary;
         font-size: 1rem;
         padding: 15px 30px !important;
         text-align: center;
@@ -694,15 +700,14 @@ body {
     }
 
     .btn-row {
-        margin: 50px 0 0;
 
         .btn {
             display: inline-block;
-            margin: 0 15px 0 0;
+            margin: 50px 15px 0 0;
 
             @include breakpoint(md) {
                 display: block;
-                margin: 0 0 15px;
+                margin: 50px 0 15px;
             }
         }
     }
@@ -736,7 +741,7 @@ body {
     }
 
     .single-thumbnail {
-        box-shadow: 0 0 5px 0 $dark;
+        box-shadow: 0 0 15px 0 $white;
         height: 500px;
         margin: 0 0 50px;
         overflow: hidden;
@@ -758,6 +763,7 @@ body {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 15px;
+        padding: 1em 0;
 
         &__card {
             margin: 0 0 45px;
@@ -771,6 +777,7 @@ body {
             figure {
                 height: 250px;
                 margin: 0;
+                position: relative;
                 transition: all .25s ease;
                 width: 100%;
 
@@ -788,14 +795,20 @@ body {
             }
 
             cite {
-                font-size: 1.25rem;
+                background:$dark;
+                bottom: 0;
+                color: $white;
+                font-size: 1rem;
                 font-style: normal;
                 font-weight: bold;
-                text-transform: uppercase;
+                left: 0;
+                padding: 15px;
+                position: absolute;                
+                width: 100%;               
             }
 
             &:hover figure {
-                box-shadow: 0 0 5px 0 $dark;
+                box-shadow: 0 0 15px 0 $dark;
             }
         }
 
@@ -817,7 +830,19 @@ body {
         @include cleanUl;
 
         &__preview {
-            margin: 0 0 3em;
+            margin: 0 0 1em;
+
+            h3 {
+                margin: 0;
+
+                a {
+                    text-decoration: none;
+                }
+            }
+
+            p {
+                margin: 0 0 15px;
+            }
         }
 
         &__link {
@@ -826,8 +851,9 @@ body {
     }
 
     .glitch {
-        font-weight: bold;
-        text-transform: uppercase;
+        //font-family: $font-secondary;
+        //font-weight: bold;
+        //text-transform: uppercase;
         position: relative;
 
         text-shadow:
@@ -859,7 +885,9 @@ body {
         height: 100vh;
 
         h1 {
+            font-family: $font-secondary;
             font-size: 5rem;
+            text-transform: uppercase;
 
             @include breakpoint(md) {
                 font-size: 3rem;
@@ -876,7 +904,7 @@ body {
     }
 
     #hero {
-        padding: 200px 0 100px;
+        padding: 200px 0 0;
 
         @include breakpoint(md) {
             padding: 100px 0 50px;
@@ -899,7 +927,6 @@ body {
         a,
         a:visited {
             color: $white;
-            font-weight: bold;
             text-decoration: none;
         }
 
@@ -912,7 +939,7 @@ body {
         }
 
         &.scrolled {
-            background: $black;
+            background: $dark;
             color: $white;
         }
 

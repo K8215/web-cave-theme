@@ -14,7 +14,7 @@ get_header();
 
     <section id="hero" class="flex">
         <div class="container">
-            <h1 class="glitch">Search results:</h1>
+            <h1>Search results:</h1>
         </div>
     </section>
 

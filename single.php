@@ -17,7 +17,7 @@ get_header();
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <section id="hero" class="flex">
             <div class="container">
-                <h1 class="glitch"><?php the_title();?></h1>
+                <h1><?php the_title();?></h1>
                 <div class="meta">Category:<?php the_category();?> | Posted on:<?php the_date();?></div>
             </div>
         </section>
