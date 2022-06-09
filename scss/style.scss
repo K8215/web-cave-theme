@@ -411,7 +411,7 @@ body {
     //Modules
     .logo {
         //font-family: $font-secondary;
-        font-size: 2rem;
+        font-size: 1.25rem;
     }
 
     #mobile-toggler {
@@ -886,15 +886,16 @@ body {
 
         h1 {
             font-family: $font-secondary;
-            font-size: 5rem;
+            font-size: 7rem;
+            line-height: normal;
             text-transform: uppercase;
 
             @include breakpoint(md) {
-                font-size: 3rem;
+                font-size: 4rem;
             }
 
             @include breakpoint(sm) {
-                font-size: 2rem;
+                font-size: 3rem;
             }
         }
 
