@@ -2,7 +2,7 @@ I told Chat GPT to write this documentation in the tone of an edgy late-90s hack
 
 # Web Cave Theme
 
-The Web Cave Theme is a badass WordPress theme designed for L33t Hax0rs. Built using HTML, SCSS, and PHP, this theme is fully responsive and customizable, so you can make it look exactly how you want it to. The Web Cave Theme comes stacked with all the standard post, page, and comment functionality you'd expect, but it doesn't stop there. I've also thrown in a custom navigation menu and an added projects post type, so you can showcase your work like a true badass. And don't forget about the project post archive, where you can display your projects in a thumbnail grid that emphasizes the featured image. It's like having your very own digital gallery of awesomeness.
+The Web Cave Theme is a badass WordPress theme designed for L33t Hax0rs. Built using HTML, SCSS, and PHP, this theme is fully responsive and customizable. The Web Cave Theme comes stacked with all the standard post, page, and comment functionality you'd expect, but it doesn't stop there. I've also thrown in a custom navigation menu and an added projects post type, so you can showcase your work like a true badass. And don't forget about the project post archive, where you can display your projects in a thumbnail grid that emphasizes the featured image. It's like having your very own digital gallery of awesomeness.
 
 ## Getting Started
 
