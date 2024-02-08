@@ -1,13 +1,74 @@
-I told Chat GPT to write this documentation in the tone of an edgy late-90s hacker. I bear no responsibility for anything...
+# Web Cave Theme for WordPress
 
-# Web Cave Theme
+## Table of Contents
 
-The Web Cave Theme is a badass WordPress theme designed for L33t Hax0rs. Built using HTML, SCSS, and PHP, this theme is fully responsive and customizable. The Web Cave Theme comes stacked with all the standard post, page, and comment functionality you'd expect, but it doesn't stop there. I've also thrown in a custom navigation menu and an added projects post type, so you can showcase your work like a true badass. And don't forget about the project post archive, where you can display your projects in a thumbnail grid that emphasizes the featured image. It's like having your very own digital gallery of awesomeness.
+1. [Introduction](#introduction)
+   - 1.1 [Overview](#overview)
+   - 1.2 [Features](#features)
+   - 1.3 [Installation](#installation)
 
-## Getting Started
+2. [Theme Configuration](#theme-configuration)
+   - 2.1 [General Settings](#general-settings)
+   - 2.2 [Homepage](#homepage)
+   - 2.3 [Blog Settings](#blog-settings)
 
-Ready to enter the Web Cave? Download or clone the repository and install it on your WordPress site. Alternatively, you can download the theme as a zip file and upload it to your WordPress site through the WordPress dashboard. Either way, you're on your way to creating a site that's as edgy as you are.
+3. [Custom Templates](#custom-templates)
+   - 3.1 [Custom Post Types](#custom-post-types)
 
-See it in action on my website: https://kateswebcave.com
+4. [Customization](#customization)
+   - 4.1 [Adding Custom CSS](#adding-custom-css)
+   - 4.2 [Modifying Templates](#modifying-templates)
+   - 4.3 [Custom Functions](#custom-functions)
 
-![webcave1 1 0](https://user-images.githubusercontent.com/58354883/169668249-188c724c-5ca4-4200-b663-0186f074a3a6.jpg)
+## 1. Introduction
+
+### 1.1 Overview
+
+Welcome to the documentation for Web Cave, a custom WordPress theme.
+
+### 1.2 Features
+
+- Responsive design
+- Built-in Projects post type
+
+### 1.3 Installation
+
+1. Download or pull the theme files.
+2. Upload the theme folder to the `wp-content/themes/` directory.
+3. Activate the theme through the WordPress admin panel.
+
+## 2. Theme Configuration
+
+### 2.1 General Settings
+
+Navigate to `Appearance > Customize` in the WordPress admin panel to configure general settings such as site title, tagline, and site icon.
+
+### 2.2 Homepage
+
+Set up the homepage layout and featured sections under `Appearance > Customize > Homepage`. Depending on the theme, options may include slider settings, featured content, or custom widgets.
+
+### 2.3 Blog Settings
+
+Adjust blog-specific settings such as layout, post display, and archive settings in `Appearance > Customize > Blog`.
+
+## 3. Custom Templates
+
+### 3.1 Custom Post Types
+
+Web Cave comes with a Projects post type pre-installed in `functions.php`.
+
+## 4. Customization
+
+### 4.1 Adding Custom CSS
+
+The styles for Web Cave are built with SCSS and can be located in the `/scss/` folder.
+
+### 4.2 Modifying Templates
+
+To modify theme templates, create a child theme and override template files in the child theme's directory.
+
+### 4.3 Custom Functions
+
+For custom functionality, consider adding custom functions to the theme's `functions.php` file. Use a child theme to avoid losing modifications during updates.
+
+
