@@ -27,7 +27,7 @@ get_header();
             <div class="portfolio">
                 <?php while (have_posts() ) : the_post(); ?>
                 <div class="portfolio__card">
-                    <a href="<?php the_permalink();?>">
+                    <a href="<?php the_permalink();?>" aria-label="Navigate to <?php the_title();?>">
                         <figure class="left-align">
                             <?php the_post_thumbnail();?>
                             <cite><?php the_title();?></cite>

@@ -3,10 +3,8 @@
 	$postid = $post->ID;
     if(is_front_page()) {
         $postsPer = 6;
-        $title = 'Latest';
     } else {
         $postsPer = 3;
-        $title = 'Related';
     }
 
 	$args = array(
@@ -21,14 +19,14 @@
 <section>
     <div class="container">
         <h2>
-            <?php echo $title;?> Projects
+            Latest Projects
         </h2>
         <hr>
         <div class="portfolio">
             <?php while ( $project_query -> have_posts() ) :
 				$project_query -> the_post(); ?>
             <div class="portfolio__card">
-                <a href="<?php the_permalink();?>">
+                <a href="<?php the_permalink();?>" aria-label="Navigate to <?php the_title();?>">
                     <figure class="left-align">
                         <?php the_post_thumbnail();?>
                         <cite><?php the_title();?></cite>
