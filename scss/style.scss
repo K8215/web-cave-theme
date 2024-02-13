@@ -253,6 +253,14 @@ body {
 			//padding: 1em 0 0;
 		}
 
+		code {
+			background: darken($dark, 10%);
+			border-radius: 0.25rem;
+			display: block;
+			margin: 1rem 0;
+			padding: 1rem;
+		}
+
 		#hero {
 			padding: 200px 0 50px;
 
@@ -673,7 +681,7 @@ body {
 	.btn,
 	button,
 	input[type="submit"] {
-		background: $dark;
+		background: darken($dark, 10%);
 		border: none;
 		border-radius: 0;
 		color: $white;
@@ -791,7 +799,7 @@ body {
 			}
 
 			cite {
-				background: $dark;
+				background: darken($dark, 10%);
 				bottom: 0;
 				color: $white;
 				font-size: 1rem;
@@ -978,7 +986,7 @@ body {
 			}
 
 			code {
-				color: $dark;
+				color: darken($dark, 10%);
 				font-size: 0.75rem;
 				overflow-wrap: break-word;
 			}
